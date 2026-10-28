@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campaign Lab · Bank Marketing</title>
+  <link rel="stylesheet" href="/styles.css"><script src="/app.js" defer></script>
+</head>
+<body>
+  <header><a class="brand" href="/">◈ <span>Campaign<span class="light">Lab</span></span></a><span class="tag">BANK MARKETING / MODEL WORKSPACE</span><span id="connection" role="status" class="connection">Connecting…</span></header>
+  <main>
+    <div class="intro"><div><p class="eyebrow">FROM CUSTOMER DATA TO CAMPAIGN DECISIONS</p><h1>A clearer view of your next campaign.</h1><p class="muted">Explore model performance and estimate a customer’s term deposit subscription.</p></div><button id="refresh" class="secondary">↻ Refresh results</button></div>
+    <p id="dashboard-error" class="error" role="alert" hidden></p>
+    <section id="summary" class="summary" aria-label="Training summary"></section>
+    <section class="panel"><div class="section-title"><div><p class="eyebrow">01 / MODEL BENCHMARK</p><h2>Four models. One shared test set.</h2></div><span class="pill">Ranked by PR-AUC</span></div>
+      <div class="table-wrap"><table><thead><tr><th>Classifier</th><th>Accuracy</th><th>Precision</th><th>Recall</th><th>F1</th><th>ROC-AUC</th><th>PR-AUC</th></tr></thead><tbody id="scores"><tr><td colspan="7">Loading saved results…</td></tr></tbody></table></div><p class="footnote">PR-AUC helps compare performance on the less frequent subscription class. Metrics use the saved decision threshold.</p>
+    </section>
+    <section class="workspace"><div class="panel"><div class="section-title"><div><p class="eyebrow">02 / CUSTOMER EXPLORER</p><h2>Make a prediction</h2></div><button id="example" type="button" class="text-button">Load example</button></div>
+      <form id="prediction-form"><label class="model-picker">Classifier<select id="model" name="model"><option value="xgboost">XGBoost</option><option value="random_forest">Random Forest</option><option value="decision_tree">Decision Tree</option><option value="logistic_regression">Logistic Regression</option></select></label>
+      <h3>Customer profile</h3><div id="profile-fields" class="fields"></div><h3>Campaign & contact history</h3><div id="campaign-fields" class="fields"></div>
+      <p class="footnote">Pre-call prediction: call duration is excluded. Unknown categories are supported by the saved pipeline.</p><button id="predict" class="primary" type="submit">Estimate subscription <span>↗</span></button><p id="prediction-error" class="error" role="alert" hidden></p></form>
+    </div><aside class="panel result-panel" aria-live="polite"><p class="eyebrow">PREDICTION OUTPUT</p><h2 id="result-title">Start with a customer.</h2><p id="result-description" class="muted">Complete the profile and run a classifier to see its subscription estimate.</p><div class="probability" id="probability">—<span>%</span></div><div class="meter"><div id="meter-fill"></div></div><div class="result-label"><span>Subscription probability</span><span id="threshold">Threshold —</span></div><div id="decision" class="decision">Awaiting prediction</div><p class="footnote">This is a model estimate, not a guarantee of customer behavior. Balanced training weights can affect probability calibration.</p><div class="result-note"><span>◈</span><p>Same features, different perspectives.<br><span class="muted">Switch classifiers to explore how their predictions compare.</span></p></div></aside></section>
+    <footer>CampaignLab <span>Local model workspace · Results from your saved training run</span></footer>
+  </main>
+</body>
+</html>

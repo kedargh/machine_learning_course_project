@@ -1,0 +1,10 @@
+{
+  "filepaths": ["data/bank/bank-full.csv"],
+  "models_dir": "models",
+  "test_size": 0.2,
+  "random_state": 42,
+  "split_strategy": "stratified",
+  "include_duration": false,
+  "drop_duplicates": true,
+  "decision_threshold": 0.5
+}

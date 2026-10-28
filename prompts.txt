@@ -1,0 +1,1 @@
+Now, as a novelty aspect, I am trying to create an MCP server for this application connected to a local LLM that answers questions based on data and also the main functionality of predicting whether a person with a certain demographic could buy term policy or not

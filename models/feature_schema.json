@@ -1,0 +1,56 @@
+{
+  "training_file_columns": [
+    "age",
+    "job",
+    "marital",
+    "education",
+    "default",
+    "balance",
+    "housing",
+    "loan",
+    "contact",
+    "day",
+    "month",
+    "duration",
+    "campaign",
+    "pdays",
+    "previous",
+    "poutcome",
+    "y"
+  ],
+  "prediction_input_columns": [
+    "age",
+    "job",
+    "marital",
+    "education",
+    "default",
+    "balance",
+    "housing",
+    "loan",
+    "contact",
+    "day",
+    "month",
+    "duration",
+    "campaign",
+    "pdays",
+    "previous",
+    "poutcome"
+  ],
+  "target_column": "y",
+  "target_mapping": {
+    "no": 0,
+    "yes": 1
+  },
+  "duration_default": "excluded_from_pre_call_model",
+  "saved_models_accept_raw_bank_predictors": true,
+  "engineered_features": [
+    "was_previously_contacted",
+    "previous_success_flag",
+    "total_contact_count",
+    "contact_pressure",
+    "debt_product_count",
+    "recency_band",
+    "contact_quarter",
+    "balance_segment"
+  ]
+}

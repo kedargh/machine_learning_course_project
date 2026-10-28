@@ -1,0 +1,61 @@
+{
+  "created_at_utc": "2026-10-27T08:10:47.887695+00:00",
+  "project_directory": "/home/bishop/ML_CBDP/src",
+  "models_directory": "/home/bishop/ML_CBDP/models",
+  "ingestion": {
+    "rows_before_deduplication": 45211,
+    "rows_after_deduplication": 45211,
+    "duplicates_removed": 0,
+    "target_counts": {
+      "no": 39922,
+      "yes": 5289
+    },
+    "sources": [
+      {
+        "filepath": "/home/bishop/ML_CBDP/data/bank/bank-full.csv",
+        "delimiter": ";",
+        "rows": 45211,
+        "columns": 17
+      }
+    ]
+  },
+  "split_strategy": "stratified",
+  "test_size": 0.2,
+  "random_state": 42,
+  "decision_threshold": 0.5,
+  "duration_included": false,
+  "train_rows": 36168,
+  "test_rows": 9043,
+  "training_positive_rate": 0.11698186241981863,
+  "test_positive_rate": 0.11699657193409267,
+  "raw_model_input_columns": [
+    "age",
+    "job",
+    "marital",
+    "education",
+    "default",
+    "balance",
+    "housing",
+    "loan",
+    "contact",
+    "day",
+    "month",
+    "duration",
+    "campaign",
+    "pdays",
+    "previous",
+    "poutcome"
+  ],
+  "balance_segment_train_cutoffs": {
+    "low_to_medium": 171.0,
+    "medium_to_high": 935.0
+  },
+  "best_model_by_pr_auc": "xgboost",
+  "saved_models": [
+    "logistic_regression.joblib",
+    "decision_tree.joblib",
+    "random_forest.joblib",
+    "xgboost.joblib",
+    "best_model.joblib"
+  ]
+}
